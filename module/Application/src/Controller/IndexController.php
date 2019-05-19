@@ -1,15 +1,15 @@
 <?php
 	/**
 	 * *
-	 *     * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
-	 *     * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
-	 *     * @license   http://framework.zend.com/license/new-bsd New BSD License
+	 *     * @link      https://github.com/slckym/zend-google-translate
+	 *     * @author Selçuk Yıldırım <selcukyildirim[at]me.com>
 	 *
 	 */
 
 	namespace Application\Controller;
 
 	use Application\Enums\HttpMethods;
+	use Application\Module;
 	use Zend\Http\Client;
 	use Zend\Http\Request;
 	use Zend\Mvc\Controller\AbstractActionController;
@@ -38,8 +38,11 @@
 		 */
 		public function __construct()
 		{
-			$this->apiKey       = "AIzaSyBabSGLuzycUB-4wqdP8iY2hBOnPPMrb38";
-			$this->translateUrl = "https://translation.googleapis.com/language/translate/v2/";
+			$module = new Module();
+			$config = $module->getConfig();
+
+			$this->apiKey       = $config['translate']['apiKey'];
+			$this->translateUrl = $config['translate']['baseUrl'];
 		}
 
 		/**
