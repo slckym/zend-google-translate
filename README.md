@@ -14,7 +14,7 @@ module/Application/config/module.config.php.example dosyasını module.config.ph
 
 ```php
 'translate'    => [
-	'apiKey'  => 'AIzaSyBabSGLuzycUB-4wqdP8iY2hBOnPPMrb38',
+	'apiKey'  => 'API_KEY',
 	'baseUrl' => 'https://translation.googleapis.com/language/translate/v2/'
 ]
 ```
