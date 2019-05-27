@@ -51,7 +51,7 @@
 		public function indexAction()
 		{
 			$values = null;
-			if ($this->getRequest()->getMethod() == "POST") {
+			if ($this->getRequest()->getMethod() == HttpMethods::POST) {
 				$text     = $this->params()->fromPost('text');
 				$target   = $this->params()->fromPost('target');
 				$words    = $this->params()->fromPost('words');
